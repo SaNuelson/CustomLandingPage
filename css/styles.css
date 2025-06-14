@@ -1,0 +1,123 @@
+/**
+ * CustomLandingPage - Main Stylesheet
+ */
+
+:root {
+  /* Light theme variables */
+  --light-bg: #f8f9fa;
+  --light-text: #212529;
+  --light-card-bg: #ffffff;
+  --light-card-border: #dee2e6;
+  --light-accent: #0d6efd;
+
+  /* Dark theme variables */
+  --dark-bg: #212529;
+  --dark-text: #f8f9fa;
+  --dark-card-bg: #343a40;
+  --dark-card-border: #495057;
+  --dark-accent: #3d8bfd;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Light theme (default) */
+body[data-theme="light"] {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body[data-theme="light"] .card {
+  background-color: var(--light-card-bg);
+  border-color: var(--light-card-border);
+}
+
+body[data-theme="light"] .bookmark-link {
+  color: var(--light-text);
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body[data-theme="dark"] .card {
+  background-color: var(--dark-card-bg);
+  border-color: var(--dark-card-border);
+}
+
+body[data-theme="dark"] .bookmark-link {
+  color: var(--dark-text);
+}
+
+/* Main layout container */
+#app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Theme toggle */
+.theme-toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+#theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body[data-theme="light"] #theme-toggle {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body[data-theme="dark"] #theme-toggle {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Settings panel */
+.settings-icon {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--light-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+body[data-theme="dark"] .settings-icon {
+  background-color: var(--dark-accent);
+}
+
+/* Import layout component styles */
+@import url('layout.css');

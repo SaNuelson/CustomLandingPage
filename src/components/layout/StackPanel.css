@@ -1,0 +1,22 @@
+/**
+ * StackPanel Component Styles
+ */
+.stack-panel {
+  display: flex;
+  width: 100%;
+}
+
+.stack-panel.vertical {
+  flex-direction: column;
+}
+
+.stack-panel.horizontal {
+  flex-direction: row;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stack-panel.horizontal {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,173 @@
+/**
+ * CustomLandingPage - Layout System Styles
+ */
+
+/* Grid Panel */
+.grid-panel {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+/* Stack Panel */
+.stack-panel {
+  display: flex;
+  width: 100%;
+}
+
+.stack-panel.vertical {
+  flex-direction: column;
+}
+
+.stack-panel.horizontal {
+  flex-direction: row;
+}
+
+/* Dock Panel */
+.dock-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.dock-top {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.dock-bottom {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.dock-middle {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dock-left {
+  height: 100%;
+  flex-shrink: 0;
+  overflow-y: auto;
+  width: 250px; /* Default width */
+}
+
+.dock-right {
+  height: 100%;
+  flex-shrink: 0;
+  overflow-y: auto;
+  width: 250px; /* Default width */
+}
+
+.dock-center {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Component Container */
+.component-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dock-panel {
+    flex-direction: column;
+  }
+
+  .dock-middle {
+    flex-direction: column;
+  }
+
+  .dock-left, .dock-right {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+}
+
+/* Component specific styling */
+
+/* Search Component */
+.search-component {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-component .search-input {
+  height: 3rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Bookmarks Component */
+.bookmarks-component {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.bookmark-category {
+  margin-bottom: 1.5rem;
+}
+
+.bookmark-link {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bookmark-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* News Component */
+.news-component {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.news-card {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.news-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+}
+
+.news-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.news-excerpt {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-source {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
