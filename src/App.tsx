@@ -1,5 +1,5 @@
-import './App.css'
-import DockPanel from './components/layout/DockPanel'
+import './App.css';
+import { DockPanel } from './components/layout/DockPanel.tsx';
 
 function App() {
   return (
