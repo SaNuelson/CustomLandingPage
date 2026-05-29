@@ -1,54 +1,19 @@
-# React + TypeScript + Vite
+# Custom Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Disclaimer: As it usually goes, this is unfinished. Barely started even.
 
-Currently, two official plugins are available:
+This should once become a custom landing page, which can be set as a homepage instead of stuff like Google.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The idea is this page should be fully customizable, ranging from custom elements to custom HTML/CSS/JS.
 
-## Expanding the ESLint configuration
+It should support but not be limited to:
+- creating custom page layout
+- custom styling
+- localStorage persistent memory with the option of cloud sync
+- ...
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Component ideas:
+- Quick link access - basically bookmarks, but support for multi-links (i.e. open up warframe.market, overframe and wiki in one click)
+- Cloud-synced text editor - think todo / notepad, nothing complex
+- Customized news feed - I have no clue how this would work. Comb through some news sites, find if they offer freely accessible API?
+- Maybe hooks to stuff like Gmail/Calendar
